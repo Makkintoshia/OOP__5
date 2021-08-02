@@ -8,55 +8,34 @@ class MyInt
 public:
     int j;
     int k;
-     int q;
+   
     bool operator! () const
     {
 
-        return((j % 2) == 0);
+        return((j % 2) != 0);
     }
 
-/*
-    MyInt Myint()
-    {
-        if (j % 2 == 0)
-        {
-            cout<<"Chetniy" << j<<endl;
-        }
-        else
-        {
-            return;
-        }
-    }
-    */
-    MyInt operator +(MyInt myint)
-    {
 
-      myint.q + 3;
-        
-    }
+  
+    int operator + (int s)
+{
+      
+    return this->j+s;
 
+}
+   
     
     friend void operator --(MyInt & myint);
-    friend void operator ==(MyInt& myint, MyInt myint1);
+    friend bool operator ==(MyInt myint, MyInt myint1);
 };
-/*
-MyInt operator+ (MyInt myint)
+
+
+
+
+bool operator == (MyInt  myint, MyInt  myint1)
 {
-
-    return (myint.j - 3);
-}*/
-
-
-void operator == (MyInt & myint, MyInt & myint1)
-{
-    if (myint.j == myint1.j)
-    {
-        cout << myint.j << "Raven" << myint1.j;
-    }
-    else
-    {
-        cout << myint.j << "Ne raven" << myint1.j;
-    }
+    
+    return myint.j == myint1.j;
 }
 
 void  operator--(MyInt & myint)
@@ -77,14 +56,12 @@ int main()
     int z = 3;
     MyInt myint;
     MyInt myint1;
-    myint.j = 0;
-    cin >> myint1.j;
-    cin >> myint.j;
-    cin >> myint.k;
-    cin >> myint.q;
-   // umen(myint);
-   // ravenstvo(myint);
-    
+   
+     myint1.j=2;
+     myint.j=2;
+     myint.k=4;
+   
+  
     if ( !myint)
     {
         cout << "j is chetniy \n";
@@ -94,7 +71,15 @@ int main()
         cout << "j isn't chetniy \n";
     }
     --myint;
-    //myint+
-    myint.j == myint1.j;
+    int seconds = myint + 3;
+    cout << seconds;
+  
+    if (myint == myint1)
+    {
+
+
+        cout << "equal";
+    }
+     
     return 1;
 } 
